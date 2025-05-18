@@ -21,7 +21,9 @@ const Navbar = () => {
           <Link to="/" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors">Home</Link>
           <Link to="/#features" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors">Features</Link>
           <Link to="/#how-it-works" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors">How it Works</Link>
-          <Link to="/#about" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors">About</Link>
+          <Link to="/#silence-costs" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors">Why It Matters</Link>
+          <Link to="/#unsilenced-voice" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors">Your Voice</Link>
+          <Link to="/admin" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors">Admin</Link>
           <Button asChild className="bg-aegis-accent hover:bg-aegis-blue text-white">
             <a href="https://secure-whisper-reports.lovable.app/ai-assistant">Start Your Secure Report</a>
           </Button>
@@ -45,7 +47,9 @@ const Navbar = () => {
             <Link to="/" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors" onClick={() => setIsOpen(false)}>Home</Link>
             <Link to="/#features" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors" onClick={() => setIsOpen(false)}>Features</Link>
             <Link to="/#how-it-works" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors" onClick={() => setIsOpen(false)}>How it Works</Link>
-            <Link to="/#about" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors" onClick={() => setIsOpen(false)}>About</Link>
+            <Link to="/#silence-costs" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors" onClick={() => setIsOpen(false)}>Why It Matters</Link>
+            <Link to="/#unsilenced-voice" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors" onClick={() => setIsOpen(false)}>Your Voice</Link>
+            <Link to="/admin" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors" onClick={() => setIsOpen(false)}>Admin</Link>
             <Button asChild className="bg-aegis-accent hover:bg-aegis-blue text-white w-full">
               <a href="https://secure-whisper-reports.lovable.app/ai-assistant">Start Your Secure Report</a>
             </Button>

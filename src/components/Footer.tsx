@@ -40,6 +40,32 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+
+        {/* Partners Section */}
+        <div className="border-t border-white/20 py-6 mb-6">
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
+            <div className="flex items-center">
+              <span className="mr-2">🔐</span>
+              <a href="https://www.eff.org/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+                Electronic Frontier Foundation
+              </a>
+            </div>
+            <div className="hidden md:block text-gray-500">|</div>
+            <div className="flex items-center">
+              <span className="mr-2">⚖️</span>
+              <a href="https://whistlebloweraid.org/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+                Whistleblower Aid
+              </a>
+            </div>
+            <div className="hidden md:block text-gray-500">|</div>
+            <div className="flex items-center">
+              <span className="mr-2">🔗</span>
+              <a href="https://www.hyperledger.org/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors">
+                Hyperledger Foundation
+              </a>
+            </div>
+          </div>
+        </div>
         
         <div className="border-t border-white/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">

@@ -7,6 +7,8 @@ import Testimonials from "@/components/Testimonials";
 import Benefits from "@/components/Benefits";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import SilenceCosts from "@/components/SilenceCosts";
+import UnsilencedVoice from "@/components/UnsilencedVoice";
 
 const Index = () => {
   return (
@@ -16,6 +18,8 @@ const Index = () => {
         <Hero />
         <Features />
         <HowItWorks />
+        <SilenceCosts />
+        <UnsilencedVoice />
         <Testimonials />
         <Benefits />
         <CTASection />
