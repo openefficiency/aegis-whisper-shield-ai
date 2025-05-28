@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const UnsilencedVoice = () => {
   const startVapiCall = () => {
-    if (window.vapi) {
+    if (typeof window !== 'undefined' && window.vapi) {
       window.vapi.start("bb8029bb-dde6-485a-9c32-d41b684568ff");
     }
   };
