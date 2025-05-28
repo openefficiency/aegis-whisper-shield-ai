@@ -44,9 +44,9 @@ const Login = () => {
   };
 
   const testCredentials = [
-    { role: 'Ethics Officer', email: 'ethics.officer@company.com', password: 'password123' },
-    { role: 'Investigator', email: 'investigator@company.com', password: 'password123' },
-    { role: 'Ethics Admin', email: 'admin@company.com', password: 'password123' },
+    { role: 'Ethics Officer', email: 'ethics@company.com', password: 'test123' },
+    { role: 'Investigator', email: 'investigator@company.com', password: 'test123' },
+    { role: 'Ethics Admin', email: 'admin@company.com', password: 'test123' },
   ];
 
   return (
