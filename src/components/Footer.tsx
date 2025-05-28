@@ -18,16 +18,15 @@ const Footer = () => {
             <ul className="space-y-4">
               <li><Link to="/#features" className="text-gray-300 hover:text-white transition-colors">Features</Link></li>
               <li><Link to="/#how-it-works" className="text-gray-300 hover:text-white transition-colors">How it Works</Link></li>
-              <li><a href="https://secure-whisper-reports.lovable.app/ai-assistant" className="text-gray-300 hover:text-white transition-colors">Start Reporting</a></li>
             </ul>
           </div>
           
           <div>
             <h4 className="font-montserrat font-bold mb-6">Company</h4>
             <ul className="space-y-4">
-              <li><Link to="/about" className="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
-              <li><Link to="/contact" className="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
-              <li><Link to="/careers" className="text-gray-300 hover:text-white transition-colors">Careers</Link></li>
+              <li><a href="https://openefficiency.org/" className="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+              <li><a href="https://openefficiency.org/" className="text-gray-300 hover:text-white transition-colors">Contact</a></li>
+              <li><a href="https://openefficiency.org/" className="text-gray-300 hover:text-white transition-colors">Careers</a></li>
             </ul>
           </div>
           
@@ -36,7 +35,6 @@ const Footer = () => {
             <ul className="space-y-4">
               <li><Link to="/privacy" className="text-gray-300 hover:text-white transition-colors">Privacy Policy</Link></li>
               <li><Link to="/terms" className="text-gray-300 hover:text-white transition-colors">Terms of Service</Link></li>
-              <li><Link to="/security" className="text-gray-300 hover:text-white transition-colors">Security</Link></li>
             </ul>
           </div>
         </div>

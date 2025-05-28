@@ -7,6 +7,12 @@ import { Menu, X } from 'lucide-react';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const startVapiCall = () => {
+    if (window.vapi) {
+      window.vapi.start("bb8029bb-dde6-485a-9c32-d41b684568ff");
+    }
+  };
+
   return (
     <nav className="bg-white shadow-sm py-4 px-6 sticky top-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
@@ -23,9 +29,12 @@ const Navbar = () => {
           <Link to="/#how-it-works" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors">How it Works</Link>
           <Link to="/#silence-costs" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors">Why It Matters</Link>
           <Link to="/#unsilenced-voice" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors">Your Voice</Link>
-          <Link to="/admin" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors">Admin</Link>
-          <Button asChild className="bg-aegis-accent hover:bg-aegis-blue text-white">
-            <a href="https://secure-whisper-reports.lovable.app/ai-assistant">Start Your Secure Report</a>
+          <Link to="/admin" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors">Team Aegis</Link>
+          <Button 
+            onClick={startVapiCall}
+            className="bg-aegis-accent hover:bg-aegis-blue text-white"
+          >
+            Start Your Secure Report
           </Button>
         </div>
 
@@ -49,9 +58,12 @@ const Navbar = () => {
             <Link to="/#how-it-works" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors" onClick={() => setIsOpen(false)}>How it Works</Link>
             <Link to="/#silence-costs" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors" onClick={() => setIsOpen(false)}>Why It Matters</Link>
             <Link to="/#unsilenced-voice" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors" onClick={() => setIsOpen(false)}>Your Voice</Link>
-            <Link to="/admin" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors" onClick={() => setIsOpen(false)}>Admin</Link>
-            <Button asChild className="bg-aegis-accent hover:bg-aegis-blue text-white w-full">
-              <a href="https://secure-whisper-reports.lovable.app/ai-assistant">Start Your Secure Report</a>
+            <Link to="/admin" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors" onClick={() => setIsOpen(false)}>Team Aegis</Link>
+            <Button 
+              onClick={startVapiCall}
+              className="bg-aegis-accent hover:bg-aegis-blue text-white w-full"
+            >
+              Start Your Secure Report
             </Button>
           </div>
         </div>

@@ -1,7 +1,14 @@
 
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const SilenceCosts = () => {
+  const startVapiCall = () => {
+    if (window.vapi) {
+      window.vapi.start("bb8029bb-dde6-485a-9c32-d41b684568ff");
+    }
+  };
+
   return (
     <section id="silence-costs" className="py-16 bg-gray-50">
       <div className="container mx-auto px-6">
@@ -43,12 +50,12 @@ const SilenceCosts = () => {
           <p className="text-xl md:text-2xl font-medium text-gray-800 mb-6">
             The next Enron is brewing. Will you shield it—or expose it?
           </p>
-          <a 
-            href="https://secure-whisper-reports.lovable.app/ai-assistant" 
+          <Button 
+            onClick={startVapiCall}
             className="bg-aegis-accent hover:bg-aegis-blue text-white font-medium px-8 py-3 rounded-md transition-colors"
           >
             Begin Your Report →
-          </a>
+          </Button>
         </div>
       </div>
     </section>
