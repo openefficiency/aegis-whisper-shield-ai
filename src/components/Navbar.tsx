@@ -32,12 +32,6 @@ const Navbar = () => {
     enabled: !!user?.id,
   });
 
-  const startVapiCall = () => {
-    if (typeof window !== 'undefined' && window.vapi) {
-      window.vapi.start("bb8029bb-dde6-485a-9c32-d41b684568ff");
-    }
-  };
-
   const handleSignOut = async () => {
     await supabase.auth.signOut();
     navigate('/');
@@ -64,43 +58,34 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-4">
-          {!user && (
-            <Button 
-              onClick={startVapiCall}
-              className="bg-aegis-accent hover:bg-aegis-blue text-white"
-            >
-              Start Your Secure Report
-            </Button>
-          )}
-          
-          {user && profile?.role === 'whistleblower' && (
+          {!user ? (
             <>
-              <Button 
-                onClick={startVapiCall}
-                className="bg-aegis-accent hover:bg-aegis-blue text-white"
-              >
-                Make Report
-              </Button>
               <Button 
                 onClick={handleFollowUp}
                 variant="outline"
                 className="border-aegis-blue text-aegis-blue hover:bg-aegis-blue hover:text-white"
               >
-                Follow-up
+                Follow-up Report
+              </Button>
+              <Button 
+                onClick={handleTeamAegisLogin}
+                variant="outline"
+                className="border-aegis-blue text-aegis-blue hover:bg-aegis-blue hover:text-white"
+              >
+                Team Aegis Login
               </Button>
             </>
-          )}
-
-          {!user ? (
-            <Button 
-              onClick={handleTeamAegisLogin}
-              variant="outline"
-              className="border-aegis-blue text-aegis-blue hover:bg-aegis-blue hover:text-white"
-            >
-              Team Aegis Login
-            </Button>
           ) : (
             <div className="flex items-center space-x-2">
+              {profile?.role === 'whistleblower' && (
+                <Button 
+                  onClick={handleFollowUp}
+                  variant="outline"
+                  className="border-aegis-blue text-aegis-blue hover:bg-aegis-blue hover:text-white"
+                >
+                  Follow-up Report
+                </Button>
+              )}
               {(profile?.role === 'ethics_officer' || profile?.role === 'investigator' || profile?.role === 'ethics_admin') && (
                 <Button 
                   onClick={() => navigate('/dashboard')}
@@ -142,10 +127,11 @@ const Navbar = () => {
             {!user ? (
               <>
                 <Button 
-                  onClick={startVapiCall}
-                  className="bg-aegis-accent hover:bg-aegis-blue text-white w-full"
+                  onClick={handleFollowUp}
+                  variant="outline"
+                  className="border-aegis-blue text-aegis-blue hover:bg-aegis-blue hover:text-white w-full"
                 >
-                  Start Your Secure Report
+                  Follow-up Report
                 </Button>
                 <Button 
                   onClick={handleTeamAegisLogin}
@@ -158,21 +144,13 @@ const Navbar = () => {
             ) : (
               <>
                 {profile?.role === 'whistleblower' && (
-                  <>
-                    <Button 
-                      onClick={startVapiCall}
-                      className="bg-aegis-accent hover:bg-aegis-blue text-white w-full"
-                    >
-                      Make Report
-                    </Button>
-                    <Button 
-                      onClick={handleFollowUp}
-                      variant="outline"
-                      className="border-aegis-blue text-aegis-blue hover:bg-aegis-blue hover:text-white w-full"
-                    >
-                      Follow-up
-                    </Button>
-                  </>
+                  <Button 
+                    onClick={handleFollowUp}
+                    variant="outline"
+                    className="border-aegis-blue text-aegis-blue hover:bg-aegis-blue hover:text-white w-full"
+                  >
+                    Follow-up Report
+                  </Button>
                 )}
                 {(profile?.role === 'ethics_officer' || profile?.role === 'investigator' || profile?.role === 'ethics_admin') && (
                   <Button 

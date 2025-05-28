@@ -8,25 +8,26 @@ const VapiIframe = () => {
   const [isActive, setIsActive] = useState(false);
   
   const vapiAgentId = "bb8029bb-dde6-485a-9c32-d41b684568ff";
-  const vapiUrl = `https://vapi.ai/embed/${vapiAgentId}`;
+  const vapiPublicKey = "4669de51-f9ba-4e99-a9dd-e39279a6f510";
+  const vapiUrl = `https://vapi.ai/embed/${vapiAgentId}?publicKey=${vapiPublicKey}`;
 
   const toggleAgent = () => {
     setIsActive(!isActive);
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
-      <Card className="border-2 border-aegis-accent/20 hover:border-aegis-accent/40 transition-colors">
+    <div className="w-full max-w-3xl mx-auto">
+      <Card className="border-2 border-white/20 hover:border-white/40 transition-colors bg-white/10 backdrop-blur-sm">
         <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-center">
-            <Mic className="h-6 w-6 text-aegis-accent" />
-            Aegis Voice Agent
+          <CardTitle className="flex items-center gap-2 text-center text-white">
+            <Mic className="h-6 w-6 text-white" />
+            Speak Up. Stay Safe.
           </CardTitle>
         </CardHeader>
         <CardContent>
           <div className="text-center space-y-4">
-            <p className="text-gray-600 mb-6">
-              Speak confidentially with our empathetic AI agent. Your voice is never recorded - only transcribed and summarized for investigation.
+            <p className="text-white/90 mb-6">
+              Share your concerns confidentially with our empathetic AI agent. Your voice is never recorded - only transcribed and summarized for investigation.
             </p>
             
             <Button
@@ -35,13 +36,13 @@ const VapiIframe = () => {
               className={`w-full ${
                 isActive 
                   ? 'bg-red-500 hover:bg-red-600 text-white' 
-                  : 'bg-aegis-accent hover:bg-aegis-blue text-white'
+                  : 'bg-white text-aegis-blue hover:bg-gray-100'
               }`}
             >
               {isActive ? (
                 <>
                   <MicOff className="mr-2 h-5 w-5" />
-                  End Conversation
+                  End Voice Report
                 </>
               ) : (
                 <>
@@ -62,7 +63,7 @@ const VapiIframe = () => {
                 <iframe
                   src={vapiUrl}
                   width="100%"
-                  height="400"
+                  height="500"
                   frameBorder="0"
                   allow="microphone"
                   className="rounded-lg border border-gray-300"
@@ -72,7 +73,7 @@ const VapiIframe = () => {
             )}
 
             {!isActive && (
-              <div className="text-sm text-gray-500 mt-4">
+              <div className="text-sm text-white/70 mt-4">
                 Click "Start Voice Report" to begin your confidential conversation
               </div>
             )}

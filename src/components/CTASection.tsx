@@ -3,10 +3,15 @@ import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
 
 const CTASection = () => {
-  const startVapiCall = () => {
-    if (typeof window !== 'undefined' && window.vapi) {
-      window.vapi.start("bb8029bb-dde6-485a-9c32-d41b684568ff");
+  const scrollToVapiAgent = () => {
+    const heroSection = document.querySelector('.bg-gradient-to-b');
+    if (heroSection) {
+      heroSection.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handleSupportPilot = () => {
+    window.open('https://openefficiency.org', '_blank');
   };
 
   return (
@@ -21,14 +26,14 @@ const CTASection = () => {
         
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Button 
-            onClick={startVapiCall}
+            onClick={scrollToVapiAgent}
             size="lg" 
             className="bg-white text-aegis-blue hover:bg-gray-100 font-bold text-base"
           >
             Begin Your Report <ArrowRight className="ml-2 h-5 w-5" />
           </Button>
           <Button 
-            onClick={startVapiCall}
+            onClick={handleSupportPilot}
             variant="outline" 
             size="lg" 
             className="border-white text-white hover:bg-white/10 font-bold text-base"
