@@ -60,7 +60,7 @@ const Navbar = () => {
             <Link to="/#features" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors" onClick={() => setIsOpen(false)}>Features</Link>
             <Link to="/#how-it-works" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors" onClick={() => setIsOpen(false)}>How it Works</Link>
             <Link to="/#silence-costs" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors" onClick={() => setIsOpen(false)}>Why It Matters</Link>
-            <Link to="/#unsilenced-voice" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors" onClick={() => setIsOpen(false)">Your Voice</Link>
+            <Link to="/#unsilenced-voice" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors" onClick={() => setIsOpen(false)}>Your Voice</Link>
             <a href="https://openefficiency.org/" target="_blank" rel="noopener noreferrer" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors">About Us</a>
             <a href="https://openefficiency.org/" target="_blank" rel="noopener noreferrer" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors">Contact</a>
             <a href="https://openefficiency.org/" target="_blank" rel="noopener noreferrer" className="font-medium text-gray-700 hover:text-aegis-accent transition-colors">Careers</a>
