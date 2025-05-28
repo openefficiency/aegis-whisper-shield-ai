@@ -9,7 +9,140 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      complaint_updates: {
+        Row: {
+          complaint_id: string | null
+          content: string
+          created_at: string | null
+          id: string
+          is_query: boolean | null
+          update_type: string
+          updated_by: string | null
+        }
+        Insert: {
+          complaint_id?: string | null
+          content: string
+          created_at?: string | null
+          id?: string
+          is_query?: boolean | null
+          update_type: string
+          updated_by?: string | null
+        }
+        Update: {
+          complaint_id?: string | null
+          content?: string
+          created_at?: string | null
+          id?: string
+          is_query?: boolean | null
+          update_type?: string
+          updated_by?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "complaint_updates_complaint_id_fkey"
+            columns: ["complaint_id"]
+            isOneToOne: false
+            referencedRelation: "complaints"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "complaint_updates_updated_by_fkey"
+            columns: ["updated_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      complaints: {
+        Row: {
+          assigned_to: string | null
+          category: string | null
+          company_subdomain: string | null
+          created_at: string | null
+          created_by: string | null
+          id: string
+          report_id: string
+          resolution_notes: string | null
+          reward_amount: number | null
+          status: string
+          summary: string
+          title: string
+          updated_at: string | null
+          whistleblower_update: string | null
+        }
+        Insert: {
+          assigned_to?: string | null
+          category?: string | null
+          company_subdomain?: string | null
+          created_at?: string | null
+          created_by?: string | null
+          id?: string
+          report_id: string
+          resolution_notes?: string | null
+          reward_amount?: number | null
+          status?: string
+          summary: string
+          title: string
+          updated_at?: string | null
+          whistleblower_update?: string | null
+        }
+        Update: {
+          assigned_to?: string | null
+          category?: string | null
+          company_subdomain?: string | null
+          created_at?: string | null
+          created_by?: string | null
+          id?: string
+          report_id?: string
+          resolution_notes?: string | null
+          reward_amount?: number | null
+          status?: string
+          summary?: string
+          title?: string
+          updated_at?: string | null
+          whistleblower_update?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "complaints_assigned_to_fkey"
+            columns: ["assigned_to"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      profiles: {
+        Row: {
+          company_subdomain: string | null
+          created_at: string | null
+          email: string
+          full_name: string | null
+          id: string
+          role: string
+          updated_at: string | null
+        }
+        Insert: {
+          company_subdomain?: string | null
+          created_at?: string | null
+          email: string
+          full_name?: string | null
+          id: string
+          role?: string
+          updated_at?: string | null
+        }
+        Update: {
+          company_subdomain?: string | null
+          created_at?: string | null
+          email?: string
+          full_name?: string | null
+          id?: string
+          role?: string
+          updated_at?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

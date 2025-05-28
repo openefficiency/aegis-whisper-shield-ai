@@ -1,29 +1,13 @@
 
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Features from "@/components/Features";
-import HowItWorks from "@/components/HowItWorks";
-import Testimonials from "@/components/Testimonials";
-import Benefits from "@/components/Benefits";
-import CTASection from "@/components/CTASection";
-import Footer from "@/components/Footer";
-import SilenceCosts from "@/components/SilenceCosts";
-import UnsilencedVoice from "@/components/UnsilencedVoice";
+import Navbar from '@/components/Navbar';
+import VapiVoiceAgent from '@/components/VapiVoiceAgent';
+import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen">
       <Navbar />
-      <main className="flex-grow">
-        <Hero />
-        <Features />
-        <HowItWorks />
-        <SilenceCosts />
-        <UnsilencedVoice />
-        <Testimonials />
-        <Benefits />
-        <CTASection />
-      </main>
+      <VapiVoiceAgent />
       <Footer />
     </div>
   );
